@@ -17,7 +17,7 @@ const docsSource = {
   driver: 'github',
   repo: 'vernaillen/wpnuxt-module',
   branch: 'main',
-  dir: 'docs/content',
+  dir: 'docs',
   prefix: '/1.docs',
   token: process.env.NUXT_GITHUB_TOKEN || ''
 }
