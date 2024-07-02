@@ -365,15 +365,6 @@ const { format: formatNumber } = Intl.NumberFormat('en-GB', { notation: 'compact
           :value="section.code"
           tag="pre"
           class="prose prose-primary dark:prose-invert max-w-none"
-          :parser-options="{
-            highlight: {
-              theme: {
-                light: 'material-theme-lighter',
-                default: 'material-theme',
-                dark: 'material-theme-palenight'
-              }
-            }
-          }"
         />
       </template>
     </ULandingSection>
