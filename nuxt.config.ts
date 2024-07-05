@@ -28,6 +28,7 @@ if (docsSourceBase) {
 
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
+
   modules: [
     'nuxt-content-twoslash',
     '@nuxt/content',
@@ -40,12 +41,15 @@ export default defineNuxtConfig({
     '@vernaillen/wpnuxt',
     'nuxt-og-image'
   ],
+
   future: {
     compatibilityVersion: 4
   },
+
   plausible: {
     apiHost: 'https://wpnuxt.com/plio'
   },
+
   wpNuxt: {
     wordpressUrl: 'https://wordpress.wpnuxt.com',
     generateComposables: {
@@ -53,6 +57,7 @@ export default defineNuxtConfig({
       prefix: 'use'
     }
   },
+
   $development: {
     runtimeConfig: {
       public: {
@@ -62,6 +67,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   content: {
     navigation: {
       fields: ['titleTemplate']
@@ -88,6 +94,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   twoslash: {
     floatingVueOptions: {
       classMarkdown: 'prose prose-primary dark:prose-invert'
@@ -97,26 +104,33 @@ export default defineNuxtConfig({
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
     throws: false
   },
+
   ui: {
     icons: ['heroicons', 'simple-icons']
   },
+
   colorMode: {
     disableTransition: true
   },
+
   routeRules: {
     '/api/search.json': { prerender: true }
   },
+
   typescript: {
     strict: false
   },
+
   experimental: {
     headNext: true,
     sharedPrerenderData: true,
     appManifest: true
   },
+
   devtools: {
     enabled: false
   },
+
   eslint: {
     config: {
       stylistic: {
@@ -128,5 +142,7 @@ export default defineNuxtConfig({
       lintOnStart: true,
       fix: true
     }
-  }
+  },
+
+  compatibilityDate: '2024-07-05'
 })
