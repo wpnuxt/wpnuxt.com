@@ -28,7 +28,7 @@
     "@nuxt/eslint": "^0.3.13",
     "@nuxthq/studio": "^2.0.3",
     "@nuxtjs/plausible": "^1.0.0",
-    "@vernaillen/wpnuxt": "^0.5.2",
+    "@vernaillen/wpnuxt": "0.5.3",
     "eslint": "^9.5.0",
     "nuxt-content-twoslash": "^0.1.0",
     "typescript": "5.5.3",
