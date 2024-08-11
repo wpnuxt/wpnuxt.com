@@ -108,6 +108,12 @@ export default defineNuxtConfig({
     throws: false
   },
 
+  build: {
+    // workaround fix for error: Cannot find module '/var/task/node_modules/shiki/dist/core.mjs'
+    // https://github.com/nuxt/nuxt/issues/28127
+    transpile: ['shiki']
+  },
+
   ui: {
     icons: ['heroicons', 'simple-icons']
   },
