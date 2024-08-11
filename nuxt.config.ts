@@ -77,6 +77,7 @@ export default defineNuxtConfig({
     },
     highlight: {
       theme: {
+        default: 'monokai',
         light: 'light-plus',
         dark: 'monokai'
       },
@@ -95,6 +96,11 @@ export default defineNuxtConfig({
         'graphql',
         'gql'
       ]
+    },
+    experimental: {
+      search: {
+        indexed: true
+      }
     }
   },
 
