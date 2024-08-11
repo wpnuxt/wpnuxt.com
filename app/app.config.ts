@@ -31,7 +31,7 @@ export default defineAppConfig({
     colorMode: true,
     links: [{
       icon: 'i-simple-icons-github',
-      to: 'https://github.com/vernaillen/wpnuxt-module',
+      to: 'https://github.com/wpnuxt/wpnuxt-core',
       target: '_blank',
       ariaLabel: 'WPNuxt on GitHub'
     }]
@@ -47,7 +47,7 @@ export default defineAppConfig({
     },
     {
       icon: 'i-simple-icons-github',
-      to: 'https://github.com/vernaillen/wpnuxt-module',
+      to: 'https://github.com/wpnuxt/wpnuxt-core',
       target: '_blank',
       ariaLabel: 'WPNuxt on GitHub'
     }]
@@ -60,7 +60,7 @@ export default defineAppConfig({
         {
           icon: 'i-ph-shooting-star-duotone',
           label: 'Star on GitHub',
-          to: 'https://github.com/vernaillen/wpnuxt-module',
+          to: 'https://github.com/wpnuxt/wpnuxt-core',
           target: '_blank'
         },
         {

@@ -15,7 +15,7 @@ const docsSource = {
   base: undefined,
   name: 'wpnuxt-docs',
   driver: 'github',
-  repo: 'vernaillen/wpnuxt-module',
+  repo: 'wpnuxt/wpnuxt-core',
   branch: 'main',
   dir: 'docs',
   prefix: '/1.docs',
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxthq/studio',
     '@nuxtjs/plausible',
-    '@vernaillen/wpnuxt',
+    '@wpnuxt/core',
     'nuxt-og-image'
   ],
 
@@ -76,7 +76,10 @@ export default defineNuxtConfig({
       docsSource
     },
     highlight: {
-      theme: 'monokai',
+      theme: {
+        light: 'light-plus',
+        dark: 'monokai'
+      },
       langs: [
         'js',
         'ts',

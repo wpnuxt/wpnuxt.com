@@ -5,30 +5,27 @@ const navigation = inject<NavItem[]>('navigation', [])
 
 const { header } = useAppConfig()
 
-const links = [{
-  label: 'Documentation',
-  icon: 'i-heroicons-book-open-solid',
-  to: '/docs/getting-started/installation'
-}, {
-  label: 'Demo',
-  icon: 'i-ph-monitor',
-  to: 'https://demo.wpnuxt.com',
-  target: '_blank'
-}, {
-  label: 'Open Demo in StackBlitz',
-  icon: 'i-ph-play-duotone',
-  to: 'https://stackblitz.com/github/vernaillen/wpnuxt-demo',
-  target: '_blank'
-}, {
-  label: 'Releases',
-  icon: 'i-heroicons-rocket-launch-solid',
-  to: 'https://github.com/vernaillen/wpnuxt-module/releases',
-  target: '_blank'
-}]
+const links = [
+  {
+    label: 'Demo',
+    icon: 'i-ph-monitor',
+    to: 'https://demo.wpnuxt.com',
+    target: '_blank'
+  }, {
+    label: 'Online Playground',
+    icon: 'i-ph-play-duotone',
+    to: 'https://stackblitz.com/github/wpnuxt/wpnuxt-core?file=playground%2Fapp%2Fpages%2Findex.vue',
+    target: '_blank'
+  }, {
+    label: 'Releases',
+    icon: 'i-heroicons-rocket-launch-solid',
+    to: 'https://github.com/wpnuxt/wpnuxt-core/releases',
+    target: '_blank'
+  }]
 </script>
 
 <template>
-  <UHeader :links="links">
+  <UHeader :links="[...mapContentNavigation(navigation), ...links]">
     <template #logo>
       <LogoComponent class="h-6 w-auto" />
     </template>
