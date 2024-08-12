@@ -41,5 +41,8 @@
   "resolutions": {
     "twoslash": "^0.2.9",
     "twoslash-vue": "^0.2.9"
+  },
+  "engines": {
+    "pnpm": "^9.4.0"
   }
 }
