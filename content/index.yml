@@ -29,7 +29,7 @@ sections:
         icon: 'i-ant-design-api-outlined'
         to: ''
   - title: 'Easy to use <br><span class="text-primary">Composables</span>'
-    description: 'Fetch posts, pages, menus or settings from WordPress with simple composables:<br>usePosts()<br>usePages()<br>useMenu({ name: "main" })<br>useGeneralSettings()'
+    description: 'Fetch posts, pages, menus or settings from WordPress with simple composables:<br>useWPPosts()<br>useWPPages()<br>useWPMenu({ name: "main" })<br>useWPGeneralSettings()'
     class: 'dark bg-gray-900'
     align: left
     links:
@@ -38,16 +38,11 @@ sections:
         to: '/docs/getting-started/composables'
         color: black
         size: md
-      - label: 'Source code'
-        icon: i-ph-app-window-duotone
-        to: 'https://github.com/wpnuxt/wpnuxt-core/tree/main/src/runtime/composables'
-        color: gray
-        size: md
     slot: code
     code: |
       ```vue [posts.vue]
       <script setup lang="ts">
-      const { data: posts } = await usePosts()
+      const { data: posts } = await useWPPosts()
       </script>
 
       <template>
