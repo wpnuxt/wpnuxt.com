@@ -16,11 +16,6 @@ const links = [
     icon: 'i-ph-play-duotone',
     to: 'https://stackblitz.com/github/wpnuxt/wpnuxt-core?file=playground%2Fapp%2Fpages%2Findex.vue',
     target: '_blank'
-  }, {
-    label: 'Releases',
-    icon: 'i-heroicons-rocket-launch-solid',
-    to: 'https://github.com/wpnuxt/wpnuxt-core/releases',
-    target: '_blank'
   }]
 </script>
 

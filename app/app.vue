@@ -40,9 +40,7 @@ provide('navigation', navigation)
     <HeaderComponent />
 
     <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+      <NuxtPage />
     </UMain>
 
     <FooterComponent />

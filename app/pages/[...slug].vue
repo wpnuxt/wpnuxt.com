@@ -1,11 +1,23 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo'
 
-definePageMeta({
-  layout: 'docs'
+import type { NavItem } from '@nuxt/content/dist/runtime/types'
+
+const navigation = inject<Ref<NavItem[]>>('navigation')
+
+let fromPath = '/docs'
+const route = useRoute()
+if (route.fullPath.startsWith('/blocks')) {
+  fromPath = '/blocks'
+} else if (route.fullPath.startsWith('/auth')) {
+  fromPath = '/auth'
+}
+
+const { navPageFromPath } = useContentHelpers()
+const navigationLinks = computed(() => {
+  return mapContentNavigation(navPageFromPath(fromPath, navigation.value)?.children || [])
 })
 
-const route = useRoute()
 const { toc, seo } = useAppConfig()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
@@ -43,60 +55,74 @@ const links = computed(() => [toc?.bottom?.edit && {
 </script>
 
 <template>
-  <UPage>
-    <UPageHeader
-      :title="page.title"
-      :description="page.description"
-      :links="page.links"
-      :headline="headline"
-    />
-
-    <UPageBody prose>
-      <ContentRenderer
-        v-if="page.body"
-        :value="page"
+  <UContainer>
+    <UPage>
+      <template #left>
+        <UAside>
+          <template #top>
+            <UContentSearchButton size="md" />
+          </template>
+          <UNavigationTree
+            :links="navigationLinks"
+            default-open
+            :multiple="false"
+          />
+        </UAside>
+      </template>
+      <UPageHeader
+        :title="page.title"
+        :description="page.description"
+        :links="page.links"
+        :headline="headline"
       />
 
-      <hr v-if="surround?.length">
+      <UPageBody prose>
+        <ContentRenderer
+          v-if="page.body"
+          :value="page"
+        />
 
-      <UContentSurround :surround="surround" />
-    </UPageBody>
+        <hr v-if="surround?.length">
 
-    <template
-      v-if="page.toc !== false"
-      #right
-    >
-      <UContentToc
-        :title="toc?.title"
-        :links="page.body?.toc?.links"
+        <UContentSurround :surround="surround" />
+      </UPageBody>
+
+      <template
+        v-if="page.toc !== false"
+        #right
       >
-        <template
-          v-if="toc?.bottom"
-          #bottom
+        <UContentToc
+          :title="toc?.title"
+          :links="page.body?.toc?.links"
         >
-          <div
-            class="hidden lg:block space-y-6"
-            :class="{ '!mt-6': page.body?.toc?.links?.length }"
+          <template
+            v-if="toc?.bottom"
+            #bottom
           >
-            <UDivider
-              v-if="toc.wpnuxt?.links?.length"
-              type="dashed"
-            />
-            <UPageLinks
-              :title="toc.wpnuxt.title"
-              :links="toc.wpnuxt.links"
-            />
-            <UDivider
-              v-if="page.body?.toc?.links?.length"
-              type="dashed"
-            />
-            <UPageLinks
-              :title="toc.bottom.title"
-              :links="links"
-            />
-          </div>
-        </template>
-      </UContentToc>
-    </template>
-  </UPage>
+            <div
+              class="hidden lg:block space-y-6"
+              :class="{ '!mt-6': page.body?.toc?.links?.length }"
+            >
+              <UDivider
+                v-if="toc.wpnuxt?.links?.length"
+                type="dashed"
+              />
+              <UPageLinks
+                :title="toc.wpnuxt.title"
+                :links="toc.wpnuxt.links"
+              />
+              <UDivider
+                v-if="page.body?.toc?.links?.length"
+                type="dashed"
+              />
+              <UPageLinks
+                :title="toc.bottom.title"
+                :links="links"
+              />
+            </div>
+          </template>
+        </UContentToc>
+      </template>
+    </UPage>
+  </UContainer>
 </template>

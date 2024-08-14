@@ -1,4 +1,4 @@
-import { docsSource } from './docsSource.config'
+import { coreDocs, blocksDocs } from './docsSource.config'
 
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -40,7 +40,9 @@ export default defineNuxtConfig({
       fields: ['titleTemplate']
     },
     sources: {
-      docsSource
+      coreDocs,
+      blocksDocs
+      // authDocs
     },
     highlight: {
       theme: {
