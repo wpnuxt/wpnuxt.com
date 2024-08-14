@@ -37,7 +37,7 @@ export default defineAppConfig({
     }]
   },
   footer: {
-    credits: 'Copyright © 2024',
+    credits: 'Copyright © 2024 WPNuxt',
     colorMode: false,
     links: [{
       icon: 'i-simple-icons-nuxtdotjs',
@@ -64,15 +64,15 @@ export default defineAppConfig({
           target: '_blank'
         },
         {
-          icon: 'i-ph-hand-heart-duotone',
-          label: 'Become a Sponsor',
-          to: 'https://github.com/sponsors/vernaillen',
-          target: '_blank'
-        },
-        {
           icon: 'i-custom-vernaillen-logo-dark',
           label: 'Vernaillen.dev',
           to: 'https://vernaillen.dev',
+          target: '_blank'
+        },
+        {
+          icon: 'i-ph-hand-heart-duotone',
+          label: 'Become a Sponsor',
+          to: 'https://github.com/sponsors/vernaillen',
           target: '_blank'
         }
       ]
@@ -91,26 +91,8 @@ export default defineAppConfig({
           label: 'Nuxt Discord',
           to: 'https://chat.nuxt.dev',
           target: '_blank'
-        },
-        {
-          icon: 'i-ph-hand-heart-duotone',
-          label: 'Sponsor Nuxt',
-          to: 'https://github.com/sponsors/nuxt',
-          target: '_blank'
         }
       ]
-    }
-  },
-  elements: {
-    variables: {
-      light: {
-        background: '255 255 255',
-        foreground: 'var(--color-gray-700)'
-      },
-      dark: {
-        background: 'var(--color-gray-950)',
-        foreground: 'var(--color-gray-400)'
-      }
     }
   }
 })

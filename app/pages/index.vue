@@ -39,7 +39,7 @@ useSeoMeta({
           color="primary"
           label="Get Started"
           icon="i-ph-rocket-launch-duotone"
-          to="/docs/getting-started/installation"
+          to="/docs/getting-started"
           size="xl"
         />
         <UButton

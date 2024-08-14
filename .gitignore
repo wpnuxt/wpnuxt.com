@@ -29,4 +29,3 @@ logs
 .eslintcache
 .queries
 app/.queries
-app/schema.graphql
