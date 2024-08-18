@@ -23,6 +23,13 @@ const links = [
   <UHeader :links="[...mapContentNavigation(navigation), ...links]">
     <template #logo>
       <LogoComponent class="h-6 w-auto" />
+      <UButton
+        size="2xs"
+        variant="outline"
+        class="mb-[-4px] ml-1 ring-primary-300 dark:ring-primary-700"
+      >
+        beta
+      </UButton>
     </template>
 
     <template #right>

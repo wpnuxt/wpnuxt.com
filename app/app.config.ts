@@ -70,6 +70,12 @@ export default defineAppConfig({
           target: '_blank'
         },
         {
+          icon: 'i-ph-megaphone-duotone',
+          label: 'Follow on X',
+          to: 'https://x.com/wpnuxt',
+          target: '_blank'
+        },
+        {
           icon: 'i-ph-hand-heart-duotone',
           label: 'Become a Sponsor',
           to: 'https://github.com/sponsors/vernaillen',

@@ -20,12 +20,19 @@ useSeoMeta({
     >
       <div class="flex w-full justify-center order-first">
         <UBadge
+          v-if="page.hero?.badge"
           class="w-fit"
           color="primary"
-          variant="soft"
-          size="md"
+          :variant="page.hero?.badge.variant"
+          :size="page.hero?.badge.size"
+          :icon="page.hero?.badge.icon"
         >
-          this brand new Nuxt module is still in alpha stage
+          <span v-html="page.hero?.badge.label" />
+          <UIcon
+            v-if="page.hero?.badge.icon"
+            :name="page.hero?.badge.icon"
+            class="ml-1"
+          />
         </UBadge>
       </div>
       <template #title>
