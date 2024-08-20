@@ -67,7 +67,7 @@ export default defineAppConfig({
           icon: 'i-skill-icons-discord',
           iconClass: 'opacity-80 hover:opacity-100',
           label: 'Chat on Discord',
-          to: 'https://discord.gg/9Cwu8MtYsD',
+          to: 'https://discord.gg/fhkUwW98Bu',
           target: '_blank'
         },
         {
