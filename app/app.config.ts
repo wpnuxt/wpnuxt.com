@@ -64,13 +64,14 @@ export default defineAppConfig({
           target: '_blank'
         },
         {
-          icon: 'i-custom-vernaillen-logo-dark',
-          label: 'Vernaillen.dev',
-          to: 'https://vernaillen.dev',
+          icon: 'i-skill-icons-discord',
+          iconClass: 'opacity-80 hover:opacity-100',
+          label: 'Chat on Discord',
+          to: 'https://discord.gg/9Cwu8MtYsD',
           target: '_blank'
         },
         {
-          icon: 'i-ph-megaphone-duotone',
+          icon: 'i-ph-x-logo',
           label: 'Follow on X',
           to: 'https://x.com/wpnuxt',
           target: '_blank'
